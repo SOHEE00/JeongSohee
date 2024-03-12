@@ -1,0 +1,37 @@
+f = open('aaa.dat','r',encoding='utf-8')
+
+import os
+
+script_dir = os.path.dirname(__file__)
+information = os.path.join(script_dir, 'aaa.dat')
+
+with open(information, 'r') as file:
+    line_inform = file.readlines()
+
+a = int(input('가져올 데이터의 줄을 선택하세요 : '))
+Line = line_inform[a-1]
+get_information = Line.strip()
+
+f = get_information.split()
+
+class St:
+    no = 0; name = ''; m = 0; f = 0; t = 0;gj
+    def prtSt(self):
+        print(self.no, self.name, self.m, self.f, self.t)
+    def prtSt(self):
+        print(f'번호 : {self.no}')
+        print(f'이름 : {self.name}')
+        print(f'중간 점수 : {self.m}')
+        print(f'기말 점수 : {self.f}')
+        print(f'총점 : {self.t}')
+
+b = St()
+b.no = int(f[0])
+b.name = f[1]
+b.m = int(f[2])
+b.f = int(f[3])
+b.t = b.m + b.f
+
+b.prtSt()
+
+f.close()
